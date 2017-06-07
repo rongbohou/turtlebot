@@ -1,0 +1,35 @@
+<?xml version="1.0"?>  
+<!-- script_version=1.1 -->  
+<robot name="sensor_rplidar" xmlns:xacro="http://ros.org/wiki/xacro">  
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_gazebo.urdf.xacro"/> 
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_properties.urdf.xacro"/>  
+  
+  <!-- RPLidar 2D LIDAR -->  
+  <xacro:macro name="sensor_rplidar" params="parent"> 
+    <joint name="laser" type="fixed">  
+      <!-- origin xyz="${cam_px} ${kinect_cam_py} ${cam_pz}" rpy="${cam_or} ${cam_op} ${cam_oy}"/ -->
+      <origin xyz="-0.056 0.0 0.853" rpy="0 0.0 0.0" />
+      <parent link="base_link" />  
+      <child link="laser" />  
+    </joint>  
+  
+    <link name="laser">  
+      <visual>  
+        <geometry>  
+          <box size="0.05 0.05 0.05" />  
+        </geometry>  
+        <material name="Red" />  
+      </visual>  
+      <inertial>  
+        <mass value="0.000001" />  
+        <origin xyz="0 0 0" />  
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0"  
+          iyy="0.0001" iyz="0.0"  
+          izz="0.0001" />  
+      </inertial>  
+    </link>  
+  
+    <!-- Set up laser gazebo details -->  
+    <rplidar_laser />  
+  </xacro:macro>  
+</robot>  

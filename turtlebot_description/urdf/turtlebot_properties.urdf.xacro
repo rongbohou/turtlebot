@@ -21,10 +21,11 @@
  
      Note: REP needs to be updated with the information below 
      (currently in development and awaiting feedback)
+     real : x 0.075; y -0.0990;z 0.773
    -->
-	<xacro:property name="cam_px" value="-0.087" />
+	<xacro:property name="cam_px" value="0.075" />
 <!--	<xacro:property name="cam_py" value="-0.0125" /> Y varies for different configurations. get sets in sensors_urdf -->
-	<xacro:property name="cam_pz" value="0.2870" />
+	<xacro:property name="cam_pz" value="0.773" /> 
 	<xacro:property name="cam_or" value="0" />
 	<xacro:property name="cam_op" value="0" />
 	<xacro:property name="cam_oy" value="0" />
